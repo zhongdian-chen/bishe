@@ -17,10 +17,11 @@
     margin-left: 10px;
     background-color: black;
 }
-.btn-active {
+.btn-active{
     background: url("../img/按钮.jpg");
 }
-.actively {
+
+.actively{
     background: url("../img/按钮.jpg");
 }
 .bg-img1 {
@@ -73,7 +74,6 @@
     margin: 0 auto;
     width: 70%;
     height: 1000px;
-    /*background-color: red;*/
 }
 
 .movie-info{
