@@ -22,8 +22,8 @@
     <p style="color: white;font-size: 28px;top: 17px;left: 370px;position: absolute;font-family: mFont">天空影院</p>
     <!--登录、注册-->
     <ul style="float: right;list-style-type: none;margin-top: 27px;margin-right: 250px;">
-        <li id="loginlink" style="color: rgb(8,140,180);float: left;font-size: 20px;margin-right: 30px;cursor: pointer;">登录</li>
-        <li style="color: rgb(8,140,180);float: left;font-size: 20px;margin-right: 30px;cursor: pointer;">注册</li>
+        <li id="loginlink" style="color: rgb(8,140,180);float: left;font-size: 20px;margin-right: 30px;cursor: pointer;">亲，请登录</li>
+        <li style="color: rgb(8,140,180);float: left;font-size: 20px;margin-right: 30px;cursor: pointer;">退出登录</li>
         <li style="color: rgb(8,140,180);float: left;font-size: 20px;margin-right: 30px;cursor: pointer;">个人中心</li>
     </ul>
 
@@ -85,7 +85,11 @@
                 <div class="registerbtn pop">注册</div>
             </div>
             <form action="" method="post" name="pay">
-                <div class="login">
+                <div class="login" style="display: block">
+                    {% include 'login.html' %}
+                </div>
+                <div class="register" style="display: none">
+                    {% include 'register.html' %}
                 </div>
             </form>
         </div>
@@ -105,14 +109,16 @@
         $(this).siblings().removeClass("btn-active")
     });
 
+    $(document).ready(function(){
+        $('.registerbtn').addClass('pop_color');
+    });
+
     $('.loginbtn').click(function(){
-        $(".login").load("login.html");
         $(this).removeClass('pop_color');
         $(this).siblings().addClass('pop_color');
     });
 
     $('.registerbtn').click(function(){
-        $(".login").load("register.html");
         $(this).removeClass('pop_color');
         $(this).siblings().addClass('pop_color');
     });
@@ -130,10 +136,6 @@
         }
     }
 
-    $(function () {
-
-    })
-
     $(function(){
       $("#loginlink").click(function() {
         $("#layer-mask").show();
@@ -141,8 +143,8 @@
         $("#layer-close").click(function(){
             $("#layer-mask").hide();
            $("#layer-pop").hide();
-         });
-     });
+        });
+      });
     });
 
 </script>
