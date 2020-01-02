@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+
+.clearfloat:after{clear: both;display:table;content:"";}
+.clearfloat{ zoom:1}
+
 #loginlink #ab{
     list-style: none;
     cursor: pointer;
@@ -24,9 +28,6 @@ li a{
     cursor: pointer;
 }
 
-body{
-    text-align: center;
-}
 
 .login label
 {
@@ -60,9 +61,11 @@ body{
 }
 
 
-.loginbtn{
+.loginbtn, .registerbtn{
     float: left;
 }
+
+
 
 .pop{
     width: 160px;
@@ -76,10 +79,6 @@ body{
     background: grey;
 }
 
-.registerbtn{
-    float: left;
-    margin-left: 10px;
-}
 
 .btn-gp {
     position: absolute;
@@ -221,8 +220,6 @@ top : 0;
 left: 0;
 width: 100%;
 height: 100%;
-
-
 background: #000;
 opacity: 0.5;
 }

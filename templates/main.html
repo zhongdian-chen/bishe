@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/static/css/css.css">
     <script src="/static/js/jquery-3.4.1.js"></script>
     <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    {#"天空影院"字体设置#}
     <style>
         @font-face {
             font-family: mFont;
@@ -17,20 +18,12 @@
     </style>
 </head>
 <body style="min-width: 800px">
-<div style="width: 100%;height: 80px; background-color: rgb(50,50,50);position: relative">
-    <img src="/static/img/天空.png" width="55px" style="position: absolute;top: 17px;left: 280px">
-    <p style="color: white;font-size: 28px;top: 17px;left: 370px;position: absolute;font-family: mFont">天空影院</p>
-    <!--登录、注册-->
-    <ul style="float: right;list-style-type: none;margin-top: 27px;margin-right: 250px;">
-        <li id="loginlink" style="color: rgb(8,140,180);float: left;font-size: 20px;margin-right: 30px;cursor: pointer;">亲，请登录</li>
-        <li style="color: rgb(8,140,180);float: left;font-size: 20px;margin-right: 30px;cursor: pointer;">退出登录</li>
-        <li style="color: rgb(8,140,180);float: left;font-size: 20px;margin-right: 30px;cursor: pointer;">个人中心</li>
-    </ul>
+{% include 'nav.html' %}
 
-
-</div>
+{#轮播图整体#}
 <div id="carousel-example-generic" class="carousel slide row" data-ride="carousel"
      style="position: relative;height: 290px;margin: 0px">
+    {#轮播图中的五个小点#}
     <ol class="carousel-indicators" style="position: absolute;bottom: 60px">
         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
         <li data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -38,10 +31,12 @@
         <li data-target="#carousel-example-generic" data-slide-to="3"></li>
         <li data-target="#carousel-example-generic" data-slide-to="4"></li>
     </ol>
+    {#轮播图中的两个按钮#}
     <div class="btn-gp">
         <button class="btn btn-active actively now_movie" style="outline: none">正在热映</button>
         <button class="btn future_movie" style="outline: none">即将上映</button>
     </div>
+    {#轮播图中的五张图片#}
     <div class="carousel-inner" role="listbox">
         <div class="item active">
             <div class="bg-img1"></div>
@@ -59,6 +54,7 @@
             <div class="bg-img5"></div>
         </div>
     </div>
+    {#轮播图中左右两个箭头#}
     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -69,73 +65,61 @@
     </a>
 </div>
 
-<div class="movie">
 
+{#遮罩层#}
+<div id="layer-mask" class="layer-mask"></div>
+{#弹出层窗体#}
+<div id="layer-pop" class="layer-pop">
+    {#弹出层关闭#}
+    <div id="layer-close" class="layer-close">×</div>
+    {#弹出层内容#}
+    <div id="layer-content" class="layer-content">
+        <div style="height: 40px">
+            <div class="loginbtn pop">登录</div>
+            <div class="registerbtn pop">注册</div>
+        </div>
+        <form action="" method="post" name="pay">
+            <div class="login"></div>
+        </form>
+    </div>
 </div>
 
-<div id="layer-mask" class="layer-mask"></div>
-        <!--弹出层窗体-->
-    <div id="layer-pop" class="layer-pop">
-        <!--弹出层关闭-->
-        <div id="layer-close" class="layer-close">×</div>
-        <!--弹出层内容-->
-        <div id="layer-content" class="layer-content">
-            <div style="height: 40px">
-                <div class="loginbtn pop">登录</div>
-                <div class="registerbtn pop">注册</div>
-            </div>
-            <form action="" method="post" name="pay">
-                <div class="login" style="display: block">
-                    {% include 'login.html' %}
-                </div>
-                <div class="register" style="display: none">
-                    {% include 'register.html' %}
-                </div>
-            </form>
-        </div>
-    </div>
 
 <script type="text/javascript">
 
+    {#页面加载后登录弹出层的默认样式#}
+    $(document).ready(function(){
+        $('.login').load('/login.html')
+        $('.registerbtn').addClass('pop_color');
+    });
+
+    {#正在热映和即将上映两个按钮的动态效果#}
     $(".btn-gp").find("button").hover(function () {
         $(this).addClass("btn-active");
     }, function () {
         $(this).removeClass("btn-active")
     });
-
     $(".btn").on("click",function () {
         $(this).addClass("actively");
         $(this).siblings().removeClass("actively")
         $(this).siblings().removeClass("btn-active")
     });
 
-    $(document).ready(function(){
-        $('.registerbtn').addClass('pop_color');
-    });
-
+    {#点击登录时弹出层的样式变化#}
     $('.loginbtn').click(function(){
+        $('.login').load('/login.html')
         $(this).removeClass('pop_color');
         $(this).siblings().addClass('pop_color');
     });
 
+    {#点击注册时弹出层样式变化#}
     $('.registerbtn').click(function(){
+        $('.login').load('/register.html')
         $(this).removeClass('pop_color');
         $(this).siblings().addClass('pop_color');
     });
 
-    function register(){
-        document.pay.action="res.php";
-    }
-
-     function personal(){
-        if(document.getElementById('ab').innerHTML == "亲，请登录"){
-            alert('请先登录');
-        }
-        else{
-            window.location.href = 'personal.php';
-        }
-    }
-
+    {#弹出层的样式变化#}
     $(function(){
       $("#loginlink").click(function() {
         $("#layer-mask").show();
@@ -148,6 +132,5 @@
     });
 
 </script>
-
 </body>
 </html>
