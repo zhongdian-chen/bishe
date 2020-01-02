@@ -19,8 +19,9 @@ from movie.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main),
-    path(r'films/', films),
+    # path('', main),
+    # path(r'films/', films),
+    path(r'', films),
     path('login.html/', login),
     path('register.html/', register),
 ]
