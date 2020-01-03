@@ -13,3 +13,12 @@ def register(request):
 
 def films(request):
     return render(request, 'films.html')
+
+def tab_desc(request):
+    return render(request, 'tab_desc.html')
+
+def tab_celebrity(request):
+    return render(request, 'tab_celebrity.html')
+
+def tab_img(request):
+    return render(request, 'tab_img.html')

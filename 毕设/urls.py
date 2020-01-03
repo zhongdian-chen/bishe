@@ -24,4 +24,7 @@ urlpatterns = [
     path(r'', films),
     path('login.html/', login),
     path('register.html/', register),
+    path('tab_desc.html/', tab_desc),
+    path('tab_celebrity.html/', tab_celebrity),
+    path('tab_img.html/', tab_img),
 ]

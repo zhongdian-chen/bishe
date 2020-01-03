@@ -129,3 +129,147 @@ a {
 .action-buyBtn .action .score i.score-icon {
     background: url("/static/img/score.png");
 }
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.main-content-container {
+    margin-top: 80px;
+}
+
+.main-content {
+    width: 730px;
+    float: left;
+}
+
+.tab-title-container {
+    border-bottom: 2px solid #eee;
+}
+
+.tab-title {
+    cursor: pointer;
+    float: left;
+    font-size: 18px;
+    margin-right: 30px;
+    padding-bottom: 10px;
+    line-height: 100%;
+}
+
+.tab-title-container .active {
+    color: #ef4238;
+    border-bottom-color: #ef4238;
+}
+
+.tab-desc {
+    margin-top: 40px;
+}
+
+.module {
+    margin-bottom: 60px;
+}
+
+.module .mod-title h3 {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 18px;
+    color: #333;
+    line-height: 18px;
+}
+
+.module .mod-title h3:before{
+    float: left;
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    margin-right: 6px;
+    background-color: #ef4238;
+}
+
+.module .mod-content {
+    margin-top: 20px;
+    color: #333;
+}
+
+.tab-desc .dra {
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.module .mod-title .more {
+    float: right;
+    cursor: pointer;
+    font-size: 14px;
+    color: #999;
+    padding-right: 14px;
+    background: url("/static/img/右箭头.png") no-repeat 100%;
+}
+
+.celebrity-container {
+    font-size: 16px;
+    color: #333;
+}
+
+.celebrity-type {
+    margin-bottom: 16px;
+}
+
+.celebrity-list {
+    margin-left: -20px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.tab-desc .celebrity-container .celebrity-group .celebrity {
+    margin-bottom: 0;
+}
+
+.celebrity-container .celebrity {
+    float: left;
+    width: 128px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tab-desc .celebrity-container .celebrity-group:first-child {
+    margin-left: 0;
+}
+
+.tab-desc .celebrity-container .celebrity-group {
+    float: left;
+    margin-left: 30px;
+}
+
+.info{
+    width: 128px;
+    text-align: center;
+    padding-bottom: 1px;
+    margin-bottom: -1px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.role {
+    font-size: 14px;
+    line-height: 1.2;
+    color: #666;
+    display: inline-block;
+    width: 128px;
+    text-align: center;
+    padding-bottom: 1px;
+    margin-bottom: -1px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
