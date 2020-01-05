@@ -273,3 +273,45 @@ ul {
     overflow: hidden;
     white-space: nowrap;
 }
+
+.related {
+    width: 360px;
+    margin-left: 840px;
+}
+
+.news-list {
+    margin: 0;
+}
+
+.news-item {
+    overflow: hidden;
+    margin: 0 0 16px;
+}
+
+.news-img {
+    background-color: #efefef;
+    position: relative;
+    width: 140px;
+    height: 86px;
+    overflow: hidden;
+    float: left;
+}
+
+.news-main {
+    overflow: hidden;
+    position: relative;
+    margin-left: 150px;
+    height: 86px;
+}
+
+.news-title {
+    line-height: 1.2;
+    font-size: 16px;
+    margin-top: 20px;
+    height: 38px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

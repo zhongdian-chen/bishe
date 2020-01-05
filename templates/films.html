@@ -55,29 +55,82 @@
                         </div>
                     </a>
                 </div>
-                <a class="btn buy" name="main">特惠购票</a>
+                <a class="btn buy" id="BUY" name="BUY">特惠购票</a>
             </div>
         </div>
     </div>
 </div>
 <div class="container">
     <div class="main-content-container clearfloat">
-
         <div class="main-content">
             <div class="tab-container">
                 <div class="tab-title-container clearfloat">
-                    <div class="tab-title active">介绍</div>
-                    <div class="tab-title">演职人员</div>
-                    <div class="tab-title">图集</div>
-                    <div onclick="all()">asads</div>
+                    <div class="tab-title title1 active">介绍</div>
+                    <div class="tab-title title2">演职人员</div>
+                    <div class="tab-title title3">图集</div>
                 </div>
-                <div class="tab-content-container">
-                </div>
+                <div class="tab-content-container"></div>
             </div>
         </div>
-        <div class="related"></div>
+        <div class="related">
+            <div class="module">
+                <div class="mod-title">
+                    <h3>相关资讯</h3>
+                </div>
+                <div class="mod-content">
+                    <dl class="news-list">
+                        <dd class="news-item">
+                            <div class="news-img"><img src="https://p0.meituan.net/movie/b21faa448c19cd5636a26317162de769863031.jpg@140w_86h_1e_1c" alt=""></div>
+                            <div class="news-main">
+                                <div class="news-title">单日持续领跑！《宠爱》票房破3亿，病危狗狗催泪回应钟楚曦“谁最爱我“</div>
+                            </div>
+                        </dd>
+                        <dd class="news-item">
+                            <div class="news-img"><img src="https://p0.meituan.net/movie/00cbb2091714ddea3132f6b34ab9d945817354.jpg@140w_86h_1e_1c" alt=""></div>
+                            <div class="news-main">
+                                <div class="news-title">上映2天2.9亿，《宠爱》蝉联票房日冠曝新特辑，吴磊张子枫诠释最美友情</div>
+                            </div>
+                        </dd>
+                        <dd class="news-item">
+                            <div class="news-img"><img src="https://p0.meituan.net/movie/d03518d7a684d51febbb9d96045ffdf8587605.jpg@140w_86h_1e_1c" alt=""></div>
+                            <div class="news-main">
+                                <div class="news-title">《宠爱》跨年上映，CINITY 4K高清画质给你2020年第一份宠爱</div>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="module"></div>
+        </div>
     </div>
+
+</div>
+
+
+
+
+<div style="height: 1000px;"></div>
+
+
     <script  type="text/javascript">
+
+        function to_cele(){
+            if ($('.to_cele').siblings()[0].innerText=='演职人员'){
+                $('.title2').addClass('active');
+                $('.title1,.title3').removeClass('active')
+            }
+            $('.tab-content-container').load('/tab_celebrity.html')
+            $("html,body").animate({scrollTop: $("#BUY").offset().top}, 500);
+        }
+
+        function to_img(){
+            if ($('.to_img').siblings()[0].innerText=='图集'){
+                $('.title3').addClass('active');
+                $('.title1,.title2').removeClass('active')
+            }
+            $('.tab-content-container').load('/tab_img.html')
+            $("html,body").animate({scrollTop: $("#BUY").offset().top}, 500);
+        }
 
         $(document).ready(function(){
             $('.tab-content-container').load('/tab_desc.html');
@@ -94,21 +147,12 @@
             }
         });
 
-        function all(){
-            alert('asdasd');
-        }
+
 
         $('.mod-title').on('click','more',function () {
             alert('asd')
         })
 
     </script>
-</div>
-
-
-
-
-<div style="height: 1000px;"></div>
-
 </body>
 </html>
