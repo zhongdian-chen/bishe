@@ -1,0 +1,36 @@
+.tab-desc .movie-img-big {
+    width: 465px;
+    height: 258px;
+    float: left;
+}
+.tab-desc .movie-img-small {
+    margin-left: 471px;
+}
+.tab-desc .movie-img-small .img1 {
+    width: 126px;
+    height: 126px;
+    overflow: hidden;
+    float: left;
+}
+.tab-desc .movie-img-small .img2 {
+    width: 126px;
+    height: 126px;
+    overflow: hidden;
+    float: left;
+    margin-left: 6px;
+}
+.tab-desc .movie-img-small .img3 {
+    width: 126px;
+    height: 126px;
+    overflow: hidden;
+    float: left;
+    margin-top: 6px;
+}
+.tab-desc .movie-img-small .img4 {
+    width: 126px;
+    height: 126px;
+    overflow: hidden;
+    float: right;
+    margin-left: 6px;
+    margin-top: 6px;
+}

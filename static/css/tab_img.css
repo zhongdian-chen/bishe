@@ -1,0 +1,14 @@
+.tab_img>ul {
+    margin-left: -20px;
+}
+.tab_img>ul>li{
+    width: 104px;
+    height: 104px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.tab_img>ul>li>img{
+    width: 104px;
+    height: 104px;
+}

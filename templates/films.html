@@ -6,6 +6,10 @@
     <link rel="icon" href="/static/img/天空.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="/static/css/css.css">
     <link rel="stylesheet" href="/static/css/films.css">
+    <link rel="stylesheet" href="/static/css/tab_desc.css">
+    <link rel="stylesheet" href="/static/css/tab_img.css">
+    <link rel="stylesheet" href="/static/css/tab_celebrity.css">
+    <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
     <script src="/static/js/jquery-3.4.1.js"></script>
     {#"天空影院"字体设置#}
     <style>
@@ -22,7 +26,7 @@
 <div class="banner">
     <div class="wrapper clearfloat">
         <div class="cele-left">
-            <img class="con-img" src="/static/img/宠爱.jpg">
+            <img class="con-img" src="/static/img/films/宠爱.jpg">
         </div>
         <div class="cele-right clearfloat">
             <div class="movie-brief">
@@ -61,35 +65,55 @@
         <div class="related">
             <div class="module">
                 <div class="mod-title">
-                    <h3>相关资讯</h3>
+                    <i class="fa fa-film" aria-hidden="true"></i>
+                    <h3>推荐影片</h3>
                 </div>
                 <div class="mod-content">
-                    <dl class="news-list">
-                        <dd class="news-item">
-                            <div class="news-img"><img src="https://p0.meituan.net/movie/b21faa448c19cd5636a26317162de769863031.jpg@140w_86h_1e_1c" alt=""></div>
-                            <div class="news-main">
-                                <div class="news-title">单日持续领跑！《宠爱》票房破3亿，病危狗狗催泪回应钟楚曦“谁最爱我“</div>
+                    <div class="related-movie">
+                        <div class="related-movie-item">
+                            <div class="clearfloat">
+                                <div class="item-img">
+                                    <img src="/static/img/films/美丽人生.jpg" alt="">
+                                </div>
+                                <div class="item-info">
+                                    <h5>美丽人生</h5>
+                                    <div class="type">战争/剧情/爱情</div>
+                                    <div class="time">2020-01-03|中国大陆</div>
+                                    <div class="score"><em>9.4</em></div>
+                                </div>
                             </div>
-                        </dd>
-                        <dd class="news-item">
-                            <div class="news-img"><img src="https://p0.meituan.net/movie/00cbb2091714ddea3132f6b34ab9d945817354.jpg@140w_86h_1e_1c" alt=""></div>
-                            <div class="news-main">
-                                <div class="news-title">上映2天2.9亿，《宠爱》蝉联票房日冠曝新特辑，吴磊张子枫诠释最美友情</div>
+                        </div>
+                        <div class="related-movie-item">
+                            <div class="clearfloat">
+                                <div class="item-img">
+                                    <img src="/static/img/films/美丽人生.jpg" alt="">
+                                </div>
+                                <div class="item-info">
+                                    <h5>美丽人生</h5>
+                                    <div class="type">战争/剧情/爱情</div>
+                                    <div class="time">2020-01-03|中国大陆</div>
+                                    <div class="score"><em>9.4</em></div>
+                                </div>
                             </div>
-                        </dd>
-                        <dd class="news-item">
-                            <div class="news-img"><img src="https://p0.meituan.net/movie/d03518d7a684d51febbb9d96045ffdf8587605.jpg@140w_86h_1e_1c" alt=""></div>
-                            <div class="news-main">
-                                <div class="news-title">《宠爱》跨年上映，CINITY 4K高清画质给你2020年第一份宠爱</div>
+                        </div>
+                        <div class="related-movie-item">
+                            <div class="clearfloat">
+                                <div class="item-img">
+                                    <img src="/static/img/films/美丽人生.jpg" alt="">
+                                </div>
+                                <div class="item-info">
+                                    <h5>美丽人生</h5>
+                                    <div class="type">战争/剧情/爱情</div>
+                                    <div class="time">2020-01-03|中国大陆</div>
+                                    <div class="score"><em>9.4</em></div>
+                                </div>
                             </div>
-                        </dd>
-                    </dl>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="module"></div>
         </div>
     </div>
-
 </div>
 
 
@@ -101,7 +125,7 @@
     <script  type="text/javascript">
 
         function to_cele(){
-            if ($('.to_cele').siblings()[0].innerText=='演职人员'){
+            if ($('.to_cele').siblings()[1].innerText==='演职人员'){
                 $('.title2').addClass('active');
                 $('.title1,.title3').removeClass('active')
             }
@@ -110,7 +134,7 @@
         }
 
         function to_img(){
-            if ($('.to_img').siblings()[0].innerText=='图集'){
+            if ($('.to_img').siblings()[1].innerText==='图集'){
                 $('.title3').addClass('active');
                 $('.title1,.title2').removeClass('active')
             }
@@ -124,11 +148,11 @@
         $('.tab-title').click(function () {
             $(this).addClass('active');
             $(this).siblings().removeClass('active');
-            if ($(this)[0].innerHTML=='介绍'){
+            if ($(this)[0].innerHTML==='介绍'){
                 $('.tab-content-container').load('/tab_desc.html')
-            }else if ($(this)[0].innerHTML=='演职人员'){
+            }else if ($(this)[0].innerHTML==='演职人员'){
                 $('.tab-content-container').load('/tab_celebrity.html')
-            }else if ($(this)[0].innerHTML=='图集'){
+            }else if ($(this)[0].innerHTML==='图集'){
                 $('.tab-content-container').load('/tab_img.html')
             }
         });
