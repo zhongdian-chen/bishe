@@ -1,0 +1,51 @@
+
+.celebrity-container {
+    font-size: 16px;
+    color: #333;
+}
+
+.celebrity-type {
+    margin-bottom: 16px;
+}
+
+.celebrity-list {
+    margin-left: -20px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.tab-desc .celebrity-container .celebrity-group .celebrity {
+    margin-bottom: 0;
+}
+
+.celebrity-container .celebrity {
+    float: left;
+    width: 128px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tab-desc .celebrity-container .celebrity-group:first-child {
+    margin-left: 0;
+}
+
+.tab-desc .celebrity-container .celebrity-group {
+    float: left;
+    margin-left: 30px;
+}
+
+.info{
+    width: 128px;
+    text-align: center;
+    padding-bottom: 1px;
+    margin-bottom: -1px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}

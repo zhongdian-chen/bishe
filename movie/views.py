@@ -5,6 +5,12 @@ from django.shortcuts import render
 def main(request):
     return render(request, 'main.html')
 
+def banner(request):
+    return render(request, 'banner.html')
+
+def layer(request):
+    return render(request, 'layer.html')
+
 def login(request):
     return render(request, 'login.html')
 
@@ -22,3 +28,6 @@ def tab_celebrity(request):
 
 def tab_img(request):
     return render(request, 'tab_img.html')
+
+def buy_ticket(request):
+    return render(request, 'buy_ticket.html')

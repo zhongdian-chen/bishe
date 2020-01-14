@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天空影院</title>
+    <link rel="icon" href="/static/img/天空.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/layer.css">
+    <link rel="stylesheet" href="/static/css/buy_ticket.css">
+    <script src="/static/js/jquery-3.4.1.js"></script>
+    {#"天空影院"字体设置#}
+    <style>
+        @font-face {
+            font-family: mFont;
+            src: url('/static/bootstrap/fonts/方正舒体.TTF');
+        }
+    </style>
+</head>
+<body>
+{% include 'nav.html' %}
+{% include 'banner.html' %}
+{% include 'layer.html' %}
+
+<div style="height: 1000px;"></div>
+
+<script  type="text/javascript">
+    window.onload=function () {
+        $('.buy')[0].innerHTML='其他电影推荐';
+        $('.buy').attr('href','/films');
+    }
+</script>
+</body>
+</html>

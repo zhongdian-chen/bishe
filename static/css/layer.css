@@ -1,0 +1,102 @@
+
+.login label
+{
+    margin-right: 10px;
+    color: #888;
+    display: inline-block;
+    width: 70px;
+    text-align: right;
+}
+.login .input
+{
+    border:1px solid #ccc;
+    border-radius:3px;
+    padding:10px 5px;
+    width:180px;
+    margin-right: 60px;
+}
+.login .item
+{
+    margin-top:28px;
+}
+.login .btn
+{
+    background: #e40;
+    border:1px solid #e40;
+    border-radius:5px;
+    padding:10px 5px;
+    width:180px;
+    color:#fff;
+    margin-left: 85px;
+}
+
+
+.loginbtn, .registerbtn{
+    float: left;
+}
+
+.pop{
+    width: 160px;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.pop_color{
+    background: grey;
+}
+
+#loginlink #ab{
+    list-style: none;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+/*遮罩层*/
+.layer-mask {
+    display: none;
+    z-index: 99999;
+    position: fixed;
+    top : 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+}
+
+/*弹出层窗体*/
+.layer-pop {
+    display: none;
+    z-index : 100000;
+    position: fixed;
+    top : 0;
+    left : 0;
+    right : 0;
+    bottom: 0;
+    margin: auto;
+    width: 350px;
+    height: 270px;
+    background: #F0F8FF;
+}
+
+/*弹出层关闭按钮*/
+.layer-close {
+    float :right;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #fff;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 50%;
+    background: #eee;
+    margin-right: -12px;
+    margin-top:-12px;
+}
+
+.layer-close:hover {
+    cursor: pointer;
+    background: #ccc;
+    color: #fff;
+}

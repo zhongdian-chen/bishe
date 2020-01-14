@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>天空影院</title>
     <link rel="icon" href="/static/img/天空.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="/static/css/css.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/buy_ticket.css">
+    <link rel="stylesheet" href="/static/css/layer.css">
     <link rel="stylesheet" href="/static/css/films.css">
     <link rel="stylesheet" href="/static/css/tab_desc.css">
     <link rel="stylesheet" href="/static/css/tab_img.css">
@@ -20,36 +22,8 @@
     </style>
 </head>
 <body>
-<div class="clearfloat">
-    {% include 'nav.html' %}
-</div>
-<div class="banner">
-    <div class="wrapper clearfloat">
-        <div class="cele-left">
-            <img class="con-img" src="/static/img/films/宠爱.jpg">
-        </div>
-        <div class="cele-right clearfloat">
-            <div class="movie-brief">
-                <h3 class="movie-name">宠爱</h3>
-                <span class="score">8.9</span>
-                <ul style="width: 250px;list-style: none;padding-left: 0;margin-bottom: 20px;">
-                    <li class="ellipsis">
-                        <a class="text-link" href=""> 喜剧 </a>
-                        <a class="text-link" href=""> 爱情 </a>
-                        <a class="text-link" href=""> 剧情 </a>
-                    </li>
-                    <li class="ellipsis">
-                        中国大陆 / 108分钟
-                    </li>
-                    <li class="ellipsis">2019-12-31 10:00大陆上映</li>
-                </ul>
-            </div>
-            <div class="action-buyBtn">
-                <a class="buy" id="BUY" name="BUY">特惠购票</a>
-            </div>
-        </div>
-    </div>
-</div>
+{% include 'nav.html' %}
+{% include 'banner.html' %}
 <div class="container">
     <div class="main-content-container clearfloat">
         <div class="main-content">
@@ -118,51 +92,45 @@
 
 
 
-
 <div style="height: 1000px;"></div>
 
+{% include 'layer.html' %}
 
-    <script  type="text/javascript">
+<script  type="text/javascript">
 
-        function to_cele(){
-            if ($('.to_cele').siblings()[1].innerText==='演职人员'){
-                $('.title2').addClass('active');
-                $('.title1,.title3').removeClass('active')
-            }
+    function to_cele(){
+        if ($('.to_cele').siblings()[1].innerText==='演职人员'){
+            $('.title2').addClass('active');
+            $('.title1,.title3').removeClass('active')
+        }
+        $('.tab-content-container').load('/tab_celebrity.html')
+        $("html,body").animate({scrollTop: $("#BUY").offset().top}, 500);
+    }
+
+    function to_img(){
+        if ($('.to_img').siblings()[1].innerText==='图集'){
+            $('.title3').addClass('active');
+            $('.title1,.title2').removeClass('active')
+        }
+        $('.tab-content-container').load('/tab_img.html')
+        $("html,body").animate({scrollTop: $("#BUY").offset().top}, 500);
+    }
+
+    $(document).ready(function(){
+        $('.tab-content-container').load('/tab_desc.html');
+    });
+    $('.tab-title').click(function () {
+        $(this).addClass('active');
+        $(this).siblings().removeClass('active');
+        if ($(this)[0].innerHTML==='介绍'){
+            $('.tab-content-container').load('/tab_desc.html')
+        }else if ($(this)[0].innerHTML==='演职人员'){
             $('.tab-content-container').load('/tab_celebrity.html')
-            $("html,body").animate({scrollTop: $("#BUY").offset().top}, 500);
-        }
-
-        function to_img(){
-            if ($('.to_img').siblings()[1].innerText==='图集'){
-                $('.title3').addClass('active');
-                $('.title1,.title2').removeClass('active')
-            }
+        }else if ($(this)[0].innerHTML==='图集'){
             $('.tab-content-container').load('/tab_img.html')
-            $("html,body").animate({scrollTop: $("#BUY").offset().top}, 500);
         }
+    });
 
-        $(document).ready(function(){
-            $('.tab-content-container').load('/tab_desc.html');
-        });
-        $('.tab-title').click(function () {
-            $(this).addClass('active');
-            $(this).siblings().removeClass('active');
-            if ($(this)[0].innerHTML==='介绍'){
-                $('.tab-content-container').load('/tab_desc.html')
-            }else if ($(this)[0].innerHTML==='演职人员'){
-                $('.tab-content-container').load('/tab_celebrity.html')
-            }else if ($(this)[0].innerHTML==='图集'){
-                $('.tab-content-container').load('/tab_img.html')
-            }
-        });
-
-
-
-        $('.mod-title').on('click','more',function () {
-            alert('asd')
-        })
-
-    </script>
+</script>
 </body>
 </html>

@@ -19,12 +19,15 @@ from movie.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', main),
-    # path(r'films/', films),
-    path(r'', films),
+    path('', main),
+    path('banner.html/', banner),
+    path('layer.html/', layer),
+    path('films/', films),
+    path('layer.html/', layer),
     path('login.html/', login),
     path('register.html/', register),
     path('tab_desc.html/', tab_desc),
     path('tab_celebrity.html/', tab_celebrity),
     path('tab_img.html/', tab_img),
+    path('buy_ticket/', buy_ticket),
 ]

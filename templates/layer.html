@@ -1,0 +1,52 @@
+{#遮罩层#}
+<div id="layer-mask" class="layer-mask"></div>
+{#弹出层窗体#}
+<div id="layer-pop" class="layer-pop clearfloat">
+    {#弹出层关闭#}
+    <div id="layer-close" class="layer-close">×</div>
+    {#弹出层内容#}
+    <div id="layer-content" class="layer-content">
+        <div style="height: 40px">
+            <div class="loginbtn pop">登录</div>
+            <div class="registerbtn pop">注册</div>
+        </div>
+        <form action="" method="post" name="pay">
+            <div class="login"></div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    {#页面加载后登录弹出层的默认样式#}
+    $(document).ready(function(){
+        $('.login').load('/login.html')
+        $('.registerbtn').addClass('pop_color');
+    });
+
+     {#点击登录时弹出层的样式变化#}
+    $('.loginbtn').click(function(){
+        $('.login').load('/login.html')
+        $(this).removeClass('pop_color');
+        $(this).siblings().addClass('pop_color');
+    });
+
+    {#点击注册时弹出层样式变化#}
+    $('.registerbtn').click(function(){
+        $('.login').load('/register.html')
+        $(this).removeClass('pop_color');
+        $(this).siblings().addClass('pop_color');
+    });
+
+    {#弹出层的样式变化#}
+    $(function(){
+        $("#loginlink").click(function() {
+            $("#layer-mask").show();
+            $("#layer-pop").show();
+            $("#layer-close").click(function(){
+                $("#layer-mask").hide();
+                $("#layer-pop").hide();
+            });
+        });
+    });
+</script>
