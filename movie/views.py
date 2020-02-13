@@ -31,3 +31,9 @@ def tab_img(request):
 
 def buy_ticket(request):
     return render(request, 'buy_ticket.html')
+
+def select_seat(request):
+    return render(request, 'select_seat.html')
+
+
+

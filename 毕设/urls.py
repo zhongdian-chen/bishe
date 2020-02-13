@@ -30,4 +30,5 @@ urlpatterns = [
     path('tab_celebrity.html/', tab_celebrity),
     path('tab_img.html/', tab_img),
     path('buy_ticket/', buy_ticket),
+    path('select_seat/', select_seat),
 ]
