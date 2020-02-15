@@ -5,6 +5,7 @@
     <title>天空影院</title>
     <link rel="icon" href="/static/img/天空.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/banner.css">
     <link rel="stylesheet" href="/static/css/buy_ticket.css">
     <link rel="stylesheet" href="/static/css/layer.css">
     <link rel="stylesheet" href="/static/css/films.css">
@@ -29,9 +30,8 @@
         <div class="main-content">
             <div class="tab-container">
                 <div class="tab-title-container clearfloat">
-                    <div class="tab-title title1 active">介绍</div>
-                    <div class="tab-title title2">演职人员</div>
-                    <div class="tab-title title3">图集</div>
+                    <div class="tab-title title1 active">演职人员</div>
+                    <div class="tab-title title2">图集</div>
                 </div>
                 <div class="tab-content-container"></div>
             </div>
@@ -47,7 +47,7 @@
                         <div class="related-movie-item">
                             <div class="clearfloat">
                                 <div class="item-img">
-                                    <img src="/static/img/films/美丽人生.jpg" alt="">
+                                    <img src="/media/img/films/美丽人生.jpg" alt="">
                                 </div>
                                 <div class="item-info">
                                     <h5>美丽人生</h5>
@@ -60,7 +60,7 @@
                         <div class="related-movie-item">
                             <div class="clearfloat">
                                 <div class="item-img">
-                                    <img src="/static/img/films/美丽人生.jpg" alt="">
+                                    <img src="/media/img/films/美丽人生.jpg" alt="">
                                 </div>
                                 <div class="item-info">
                                     <h5>美丽人生</h5>
@@ -73,7 +73,7 @@
                         <div class="related-movie-item">
                             <div class="clearfloat">
                                 <div class="item-img">
-                                    <img src="/static/img/films/美丽人生.jpg" alt="">
+                                    <img src="/media/img/films/美丽人生.jpg" alt="">
                                 </div>
                                 <div class="item-info">
                                     <h5>美丽人生</h5>
@@ -100,8 +100,8 @@
 
     function to_cele(){
         if ($('.to_cele').siblings()[1].innerText==='演职人员'){
-            $('.title2').addClass('active');
-            $('.title1,.title3').removeClass('active')
+            $('.title1').addClass('active');
+            $('.title2').removeClass('active')
         }
         $('.tab-content-container').load('/tab_celebrity.html')
         $("html,body").animate({scrollTop: $("#BUY").offset().top}, 500);
@@ -109,22 +109,20 @@
 
     function to_img(){
         if ($('.to_img').siblings()[1].innerText==='图集'){
-            $('.title3').addClass('active');
-            $('.title1,.title2').removeClass('active')
+            $('.title2').addClass('active');
+            $('.title1').removeClass('active')
         }
         $('.tab-content-container').load('/tab_img.html')
         $("html,body").animate({scrollTop: $("#BUY").offset().top}, 500);
     }
 
     $(document).ready(function(){
-        $('.tab-content-container').load('/tab_desc.html');
+        $('.tab-content-container').load('/tab_celebrity.html');
     });
     $('.tab-title').click(function () {
         $(this).addClass('active');
         $(this).siblings().removeClass('active');
-        if ($(this)[0].innerHTML==='介绍'){
-            $('.tab-content-container').load('/tab_desc.html')
-        }else if ($(this)[0].innerHTML==='演职人员'){
+        if ($(this)[0].innerHTML==='演职人员'){
             $('.tab-content-container').load('/tab_celebrity.html')
         }else if ($(this)[0].innerHTML==='图集'){
             $('.tab-content-container').load('/tab_img.html')
