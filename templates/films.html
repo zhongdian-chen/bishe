@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/static/css/main.css">
     <link rel="stylesheet" href="/static/css/banner.css">
     <link rel="stylesheet" href="/static/css/buy_ticket.css">
+    <link rel="stylesheet" href="/static/css/nav.css">
     <link rel="stylesheet" href="/static/css/layer.css">
     <link rel="stylesheet" href="/static/css/films.css">
     <link rel="stylesheet" href="/static/css/tab_desc.css">
@@ -39,7 +40,7 @@
         <div class="related">
             <div class="module">
                 <div class="mod-title">
-                    <i class="fa fa-film" aria-hidden="true"></i>
+                    <i class="fa fa-film" aria-hidden="true" style="float: left;display: inline-block;margin-top: 5px;margin-right: 2px;"></i>
                     <h3>推荐影片</h3>
                 </div>
                 <div class="mod-content">
@@ -47,38 +48,12 @@
                         <div class="related-movie-item">
                             <div class="clearfloat">
                                 <div class="item-img">
-                                    <img src="/media/img/films/美丽人生.jpg" alt="">
+                                    <img src="{{ films_info.pic }}" alt="">
                                 </div>
                                 <div class="item-info">
-                                    <h5>美丽人生</h5>
-                                    <div class="type">战争/剧情/爱情</div>
-                                    <div class="time">2020-01-03|中国大陆</div>
-                                    <div class="score"><em>9.4</em></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="related-movie-item">
-                            <div class="clearfloat">
-                                <div class="item-img">
-                                    <img src="/media/img/films/美丽人生.jpg" alt="">
-                                </div>
-                                <div class="item-info">
-                                    <h5>美丽人生</h5>
-                                    <div class="type">战争/剧情/爱情</div>
-                                    <div class="time">2020-01-03|中国大陆</div>
-                                    <div class="score"><em>9.4</em></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="related-movie-item">
-                            <div class="clearfloat">
-                                <div class="item-img">
-                                    <img src="/media/img/films/美丽人生.jpg" alt="">
-                                </div>
-                                <div class="item-info">
-                                    <h5>美丽人生</h5>
-                                    <div class="type">战争/剧情/爱情</div>
-                                    <div class="time">2020-01-03|中国大陆</div>
+                                    <h5>{{ films_info.title }}</h5>
+                                    <div class="type">{{ films_info.type|slice:"2" }}&nbsp;{{ films_info.type|slice:"2:4" }}&nbsp;{{ films_info.type|slice:"4:6" }}&nbsp;{{ films_info.type|slice:"6:8" }}</div>
+                                    <div class="time">{{ films_info.releasetime }}&nbsp;|&nbsp;{{ films_info.origin }}</div>
                                     <div class="score"><em>9.4</em></div>
                                 </div>
                             </div>
@@ -89,46 +64,7 @@
         </div>
     </div>
 </div>
-
-
-
-<div style="height: 1000px;"></div>
-
 {% include 'layer.html' %}
-
-<script  type="text/javascript">
-
-    function to_cele(){
-        if ($('.to_cele').siblings()[1].innerText==='演职人员'){
-            $('.title1').addClass('active');
-            $('.title2').removeClass('active')
-        }
-        $('.tab-content-container').load('/tab_celebrity.html')
-        $("html,body").animate({scrollTop: $("#BUY").offset().top}, 500);
-    }
-
-    function to_img(){
-        if ($('.to_img').siblings()[1].innerText==='图集'){
-            $('.title2').addClass('active');
-            $('.title1').removeClass('active')
-        }
-        $('.tab-content-container').load('/tab_img.html')
-        $("html,body").animate({scrollTop: $("#BUY").offset().top}, 500);
-    }
-
-    $(document).ready(function(){
-        $('.tab-content-container').load('/tab_celebrity.html');
-    });
-    $('.tab-title').click(function () {
-        $(this).addClass('active');
-        $(this).siblings().removeClass('active');
-        if ($(this)[0].innerHTML==='演职人员'){
-            $('.tab-content-container').load('/tab_celebrity.html')
-        }else if ($(this)[0].innerHTML==='图集'){
-            $('.tab-content-container').load('/tab_img.html')
-        }
-    });
-
-</script>
+<script src="/static/js/films.js"></script>
 </body>
 </html>

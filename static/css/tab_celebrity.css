@@ -2,6 +2,11 @@
 .celebrity-container {
     font-size: 16px;
     color: #333;
+    margin-top: 50px;
+}
+
+.celebrity-group {
+    margin-bottom: 20px;
 }
 
 .celebrity-type {
@@ -18,15 +23,13 @@ ul {
     margin: 0;
 }
 
-.tab-desc .celebrity-container .celebrity-group .celebrity {
-    margin-bottom: 0;
-}
+
 
 .celebrity-container .celebrity {
     float: left;
     width: 128px;
     margin-left: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
@@ -35,10 +38,10 @@ ul {
     margin-left: 0;
 }
 
-.tab-desc .celebrity-container .celebrity-group {
-    float: left;
-    margin-left: 30px;
-}
+/*.tab-desc .celebrity-container .celebrity-group {*/
+/*    float: left;*/
+/*    margin-left: 30px;*/
+/*}*/
 
 .info{
     width: 128px;

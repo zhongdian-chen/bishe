@@ -31,46 +31,39 @@ a {
 .actively {
     background: url("../img/main/按钮.jpg");
 }
-.bg-img1 {
+
+
+
+.bg-img {
     width:100%;
     height:290px;
     overflow:hidden;
+}
+.bg-img1 {
     background: url("../img/main/妖铃铃.jpg");
     background-position:50%;
     background-repeat:no-repeat;
     background-size:cover;
 }
 .bg-img2 {
-    width:100%;
-    height:290px;
-    overflow:hidden;
     background: url("../img/main/二代妖精之今生有幸.jpg");
     background-position:50%;
     background-repeat:no-repeat;
     background-size:cover;
 }
 .bg-img3 {
-    width:100%;
-    height:290px;
-    overflow:hidden;
     background: url("../img/main/星球大战-最后的绝地武士.jpg");
     background-position:50%;
     background-repeat:no-repeat;
     background-size:cover;
 }
 .bg-img4 {
-    width:100%;
-    height:290px;
-    overflow:hidden;
     background: url("../img/main/公牛历险记.jpg");
     background-position:50%;
     background-repeat:no-repeat;
     background-size:cover;
 }
 .bg-img5 {
-    width:100%;
-    height:290px;
-    overflow:hidden;
     background: url("../img/main/卧底巨星.jpg");
     background-position:50%;
     background-repeat:no-repeat;

@@ -26,12 +26,13 @@ urlpatterns = [
     path('layer.html/', layer),
     path('films/', films),
     path('layer.html/', layer),
-    path('login.html/', login),
-    path('register.html/', register),
+    path('login/', login),
+    path('register/', register),
     path('tab_desc.html/', tab_desc),
     path('tab_celebrity.html/', tab_celebrity),
     path('tab_img.html/', tab_img),
     path('buy_ticket/', buy_ticket),
     path('select_seat/', select_seat),
+    path('pachong/', pachong)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -1,0 +1,47 @@
+
+.top img {
+    width: 120px;
+    height: 120px;
+    float: left;
+}
+
+.text {
+    color: rgb(8,140,180);
+    font-family: mFont;
+    font-size: 80px;
+    line-height: 120px;
+}
+
+.validate-info {
+    visibility: hidden;
+    margin-bottom: 10px;
+    padding: 5px;
+    border:1px solid #ccc;
+    border-radius: 3px;
+    background: #fff6db;
+    font-size: 12px;
+}
+
+
+.login .input
+{
+    border:1px solid #ccc;
+    padding-left: 45px;
+    border-radius:3px;
+    height: 32px;
+    width:225px;
+    font-size: 16px;
+}
+
+.login .btn1
+{
+    cursor: pointer;
+    background: #e40;
+    border:1px solid #ccc;
+    border-radius:3px;
+    height: 34px;
+    padding:5px;
+    width:270px;
+    color:#fff;
+    margin-top: 15px;
+}

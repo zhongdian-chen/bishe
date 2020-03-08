@@ -7,6 +7,7 @@
     <link rel="icon" href="/static/img/天空.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/nav.css">
     <link rel="stylesheet" href="/static/css/layer.css">
     <script src="/static/js/jquery-3.4.1.js"></script>
     <script src="/static/bootstrap/js/bootstrap.min.js"></script>
@@ -20,7 +21,6 @@
 </head>
 <body style="min-width: 800px">
 {% include 'nav.html' %}
-
 {#轮播图整体#}
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"
      style="position: relative;height: 290px;margin-top: 80px;">
@@ -40,19 +40,19 @@
     {#轮播图中的五张图片#}
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <div class="bg-img1"></div>
+            <div class="bg-img bg-img1"></div>
         </div>
         <div class="item">
-            <div class="bg-img2"></div>
+            <div class="bg-img bg-img2"></div>
         </div>
         <div class="item">
-            <div class="bg-img3"></div>
+            <div class="bg-img bg-img3"></div>
         </div>
         <div class="item">
-            <div class="bg-img4"></div>
+            <div class="bg-img bg-img4"></div>
         </div>
         <div class="item">
-            <div class="bg-img5"></div>
+            <div class="bg-img bg-img5"></div>
         </div>
     </div>
     {#轮播图中左右两个箭头#}
@@ -65,31 +65,8 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-
 <div class="abcd" style="cursor: pointer;" onclick="fc()">跳转</div>
-
-<div style="height: 1000px;"></div>
-
-
 {% include 'layer.html' %}
-<script type="text/javascript">
-
-    function fc() {
-        window.location.href='films/'
-    };
-
-    {#正在热映和即将上映两个按钮的动态效果#}
-    $(".btn-gp").find("button").hover(function () {
-        $(this).addClass("btn-active");
-    }, function () {
-        $(this).removeClass("btn-active")
-    });
-    $(".btn").on("click",function () {
-        $(this).addClass("actively");
-        $(this).siblings().removeClass("actively")
-        $(this).siblings().removeClass("btn-active")
-    });
-
-</script>
+<script src="/static/js/main.js"></script>
 </body>
 </html>

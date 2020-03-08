@@ -1,7 +1,7 @@
 <div class="banner">
     <div class="wrapper clearfloat">
         <div class="cele-left">
-            <img class="con-img" src="/media/{{ films_info.pic }}">
+            <img class="con-img" src="{{ films_info.pic }}">
         </div>
         <div class="cele-right clearfloat">
             <div class="movie-brief">
@@ -31,7 +31,7 @@
     </div>
 </div>
 
-<script type="text/javascript">
+<script >
     $('.opensyn').click(function () {
         if ($(this)[0].innerText === "（展开）"){
             $('.syntext')[0].innerText = "{{ films_info.syncpsis }}"

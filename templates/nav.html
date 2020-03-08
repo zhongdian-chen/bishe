@@ -1,18 +1,15 @@
 {#导航栏#}
 <div class="clearfloat">
-    <div style="width: 100%;background-color: white;position: fixed;min-width: 1200px;z-index: 1;border-bottom: 1px solid #d8d8d8;">
-        <div style="width: 1200px;margin: 0 auto;position: relative;height: 80px;">
-            <div style="position: relative;width: 300px;left: 20px;top: 20px">
-                <img src="/static/img/天空.png" width="55px" style="float: left;margin-left: 10px;">
-                <p style="color: rgb(8,140,180);font-size: 28px;top: 17px;left: 40px;font-family: mFont;float: left;line-height: 28px;">
-                    天空影院</p>
+    <div class="nav-big">
+        <div class="nav-small">
+            <div class="nav-left">
+                <img src="/static/img/天空.png" class="nav-img">
+                <p class="nav-text">天空影院</p>
             </div>
-            <ul style="float: right;list-style-type: none;margin-top: 27px;">
-                <li id="loginlink"
-                    style="color: #666;float: left;font-size: 20px;margin-right: 30px;cursor: pointer;">亲，请登录
-                </li>
-                <li style="color: #666;float: left;font-size: 20px;margin-right: 30px;cursor: pointer;">退出登录</li>
-                <li style="color: #666;float: left;font-size: 20px;margin-right: 30px;cursor: pointer;">个人中心</li>
+            <ul class="nav-ul">
+                <li class="nav-li"><a href="/login" style="text-decoration: none;color: #666;">亲，请登录</a></li>
+                <li class="nav-li">退出登录</li>
+                <li class="nav-li">个人中心</li>
             </ul>
         </div>
     </div>

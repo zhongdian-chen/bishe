@@ -1,11 +1,64 @@
-<div class="item">
-    <label>账&emsp;号</label>
-    <input id="name" class="input" name="name" type="text"  placeholder="请输入账号" required oninvalid="setCustomValidity('账户不能为空')" oninput="setCustomValidity('')" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天空影院</title>
+    <link rel="icon" href="/static/img/天空.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/static/css/login.css">
+    <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
+    <script src="/static/js/jquery-3.4.1.js"></script>
+    <script src="/static/js/login.js"></script>
+    {#"天空影院"字体设置#}
+    <style>
+        @font-face {
+            font-family: mFont;
+            src: url('/static/bootstrap/fonts/方正舒体.TTF');
+        }
+    </style>
+</head>
+<body>
+
+<div class="top" style="width: 1500px;height: auto;margin: 40px auto 30px;">
+
+    <img src="/static/img/天空.png" alt="">
+    <div class="text">天空影院</div>
 </div>
-<div class="item">
-    <label>密&emsp;码</label>
-    <input id="pwd" class="input" name="pwd" type="password" placeholder="请输入密码" required oninvalid="setCustomValidity('密码不能为空')" oninput="setCustomValidity('')"  />
+<div class="content" style="width: 1100px;height: 360px;margin: 100px auto 30px;">
+
+    <div style="width: 480px;height: 360px;float:left;margin-right: 100px;">
+        <img src="/static/img/1.jpg" alt="" style="width: 100%;">
+    </div>
+    <div class="login" style="float:left;">
+        <div class="validate-info">
+            <i class="fa fa-ban" aria-hidden="true" style="position:relative;left: 10px;"></i>
+        </div>
+        <form method="post" style="width: 400px;position:relative;color: #666;margin-top: 20px;" novalidate autocomplete="off">
+            <span style="font-weight: 400;">账号登陆</span>
+            <div class="item" style="height: 50px;margin-top: 20px;">
+                <span style="position:absolute;display: inline-block;top: 48px;left: 5px;">+86</span>
+                {{ form_obj.loginphone }}
+                <span  style="color:red;margin-left: 5px;">{{ form_obj.loginphone.errors.0 }}</span>
+            </div>
+            <div class="item" style="margin-top: 20px;">
+                <i class="fa fa-key" aria-hidden="true" style="position:absolute;top: 123px;left: 15px;"></i>
+                {{ form_obj.loginpwd }}
+                <span  style="color:red;margin-left: 5px;">{{ form_obj.loginpwd.errors.0 }}</span>
+            </div>
+            <div style="font-size: 12px;color: red;margin-top: 15px;">
+                <a style="float: right;cursor:pointer;margin-right: 130px;">忘记密码</a>
+            </div>
+            <div class="item">
+                {#                <button class="btn1">登陆</button>#}
+                <input type="submit" value="登录" class="btn1">
+            </div>
+            <p>还没有账号？<a style="color: red;cursor: pointer;text-decoration: none;" href="/register">免费注册</a></p>
+        </form>
+    </div>
+
 </div>
-<div class="item">
-    <input type="submit" value="登录" class="btn">
+<div class="footer" style="width: 500px;height: auto;margin: 200px auto;color: #999;font-size: 12px;">
+    &copy灵魂的价值是什么?&emsp;&reg;我们要怎样进行这另人愉悦的折磨呢?
 </div>
+
+</body>
+</html>

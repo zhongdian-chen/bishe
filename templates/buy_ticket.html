@@ -6,6 +6,7 @@
     <link rel="icon" href="/static/img/天空.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="/static/css/main.css">
     <link rel="stylesheet" href="/static/css/layer.css">
+    <link rel="stylesheet" href="/static/css/nav.css">
     <link rel="stylesheet" href="/static/css/banner.css">
     <link rel="stylesheet" href="/static/css/buy_ticket.css">
     <script src="/static/js/jquery-3.4.1.js"></script>
@@ -141,20 +142,6 @@
         </tbody>
     </table>
 </div>
-
-<div style="height: 1000px;"></div>
-
-<script  type="text/javascript">
-    window.onload=function () {
-        $('.buy')[0].innerHTML='其他电影推荐';
-        $('.buy').attr('href','/films');
-    };
-
-    var now = new Date();
-    var time1 = now.getFullYear() + "/" +(now.getMonth()+1)+"/"+now.getDate();
-    var time2 = now.getFullYear() + "/" +(now.getMonth()+1)+"/"+(now.getDate()+1);
-    $('.time1')[0].innerText=time1;
-    $('.time2')[0].innerText=time2;
-</script>
+<script src="/static/js/buy_ticket.js"></script>
 </body>
 </html>

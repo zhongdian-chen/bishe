@@ -1,11 +1,137 @@
-<div class="item">
-	<label>账&emsp;号</label>
-	<input id="name" class="input" name="user" type="text"  placeholder="请输入账号" required oninvalid="setCustomValidity('账户不能为空')" oninput="setCustomValidity('')" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天空影院</title>
+    <link rel="icon" href="/static/img/天空.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/static/css/register.css">
+    <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <script src="/static/js/jquery-3.4.1.js"></script>
+    <style>
+        /*"天空影院"字体设置*/
+        @font-face {
+            font-family: mFont;
+            src: url('/static/bootstrap/fonts/方正舒体.TTF');
+        }
+    </style>
+</head>
+<body>
+<div class="top" style="width: 1500px;height: auto;margin: 40px auto 30px;">
+    <img src="/static/img/天空.png" alt="">
+    <div class="text">天空影院</div>
 </div>
-<div class="item">
-	<label>密&emsp;码</label>
-	<input id="pwd" class="input" name="pwd" type="password" placeholder="请输入密码" required oninvalid="setCustomValidity('密码不能为空')" oninput="setCustomValidity('')"  />
+<div class="content" style="width: 1500px;height: 360px;margin: 100px auto 30px;">
+    <div style="height:40px;border-bottom: 2px solid #999;">
+        <ol style="list-style: none;width: 800px;margin: 0 auto;">
+            <li class="active"><i>1</i>验证手机号</li>
+            <li><i>2</i>填写账号信息</li>
+            <li><i>3</i>注册成功</li>
+        </ol>
+    </div>
+    <form  action="#" id="msform" style="position:relative;margin-top: 50px;" autocomplete="off"  method="post"  name="msform" novalidate>
+        {% csrf_token %}
+        <div class="error_msg" style="width: 600px;margin: 0 25%;color: red;font-size: 17px;text-align: center;height: 20px;"></div>
+        <fieldset style="display: block;">
+            <div class="item">
+                <span style="font-size: 20px;display: inline-block;width: 80px;text-align: right;margin-right: 20px;">{{ form_obj.phone.label }}</span>
+                {{ form_obj.phone }}
+            </div>
+            <div class="item">
+                <span style="font-size: 20px;display: inline-block;width: 80px;text-align: right;margin-right: 20px;position:relative;top: -20px;">验证</span>
+                <div id="dragContainer"><!-- 容器初始背景 -->
+                    <div id="dragBg"></div><!-- 绿色背景 -->
+                    <div id="dragText"></div><!-- 滑动容器文本 -->
+                    <div id="dragHandler" class="dragHandlerBg"></div>
+                </div> <!--    滑块         滑块初始背景 -->
+            </div>
+            <div class="item">
+                <button type="button" class="btn1">下一步</button>
+            </div>
+        </fieldset>
+        <fieldset style="display: none;">
+            <div class="item {% if form_obj.username.errors.0 %}has-error{% endif %}">
+                <span style="font-size: 20px;display: inline-block;width: 80px;text-align: right;margin-right: 20px;">{{ form_obj.username.label }}</span>
+                {{ form_obj.username }}
+                <span  style="color:#a94442;margin-left: 5px;">{{ form_obj.username.errors.0 }}</span>
+            </div>
+            <div style="height: 35px;color: #666;margin-left: 105px;line-height: 30px;visibility: hidden;" class="tip1">
+                用户名长度不超过8位，只允许中英文、数字、下划线
+            </div>
+            <div class="item {% if form_obj.userpwd.errors.0 %}has-error{% endif %}">
+                <span style="font-size: 20px;display: inline-block;width: 80px;text-align: right;margin-right: 20px;">{{ form_obj.userpwd.label }}</span>
+                {{ form_obj.userpwd }}
+                <span  style="color:#a94442;margin-left: 5px;">{{ form_obj.userpwd.errors.0 }}</span>
+            </div>
+            <div style="height: 35px;color: #666;width: 492px;margin-left: 105px;line-height: 30px;visibility: hidden;" class="tip2">
+                必须有英文、数字，可包含特殊符号(~!@#$%^&*)
+            </div>
+            <div class="item {% if form_obj.re_pwd.errors.0 %}has-error{% endif %}">
+                <span style="font-size: 20px;display: inline-block;width: 80px;text-align: right;margin-right: 20px;">{{ form_obj.re_pwd.label }}</span>
+                {{ form_obj.re_pwd }}
+                <span  style="color:#a94442;margin-left: 5px;">{{ form_obj.re_pwd.errors.0 }}</span>
+            </div>
+            <div style="height: 35px;color: #666;margin-left: 105px;line-height: 30px;visibility: hidden;" class="tip3">
+                密码确认，不要输错了
+            </div>
+            <div class="item">
+                <input type="submit" value="下一步" class="btn2">
+                <div class="flag" style="visibility: hidden">{{ flag }}</div>
+            </div>
+        </fieldset>
+        <fieldset>
+            注册成功
+        </fieldset>
+    </form>
 </div>
-<div class="item">
-	<button class="res btn" onclick="register()">注册</button>
+<div class="footer" style="width: 800px;height: auto;margin: 400px auto 0px;color: #999;font-size: 12px;text-align: center;">
+    &copy你知道红衫木为什么能长到参天吗？他们随风摇摆，弯曲。如果一直挺立，最终就会折断。
 </div>
+
+
+
+
+<script type="text/javascript">
+
+
+    $('.btn1').click(function () {
+        var input_phone = $('#phone').val()
+        var a = /^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+        if ($('#phone').val()==""){
+            $('.error_msg')[0].innerText = "请输入手机号"
+        } else if(!a.test(input_phone)){
+            $('.error_msg')[0].innerText = "手机号不合法"
+        } else if($('#dragText')[0].innerText == "拖动滑块验证"){
+            $('.error_msg')[0].innerText = "请拖动滑块验证"
+        } else {
+            $('.error_msg')[0].innerText = ""
+            $('fieldset').eq(0).css('display', 'none')
+            $('fieldset').eq(1).css('display', 'block')
+            $('li').eq(0).removeClass('active')
+            $('li').eq(1).addClass('active')
+        }
+    })
+
+    if ($('.flag')[0].textContent == 'True'){
+        $('fieldset').eq(0).css('display', 'none')
+        $('fieldset').eq(1).css('display', 'none')
+        $('fieldset').eq(2).css('display', 'block')
+        $('li').eq(0).removeClass('active')
+        $('li').eq(1).removeClass('active')
+        $('li').eq(2).addClass('active')
+    } else if($('.flag')[0].textContent == 'False'){
+        $('fieldset').eq(0).css('display', 'none')
+        $('fieldset').eq(1).css('display', 'block')
+        $('fieldset').eq(2).css('display', 'none')
+        $('li').eq(0).removeClass('active')
+        $('li').eq(1).addClass('active')
+        $('li').eq(2).removeClass('active')
+    }
+
+
+</script>
+
+
+<script src="/static/js/register.js"></script>
+</body>
+</html>

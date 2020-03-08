@@ -2,20 +2,44 @@ from django.db import models
 
 # Create your models here.
 
+
+class UserRegisterInfo(models.Model):
+    id = models.AutoField(primary_key=True, verbose_name='序号')
+    phone = models.CharField(null=False, max_length=11, verbose_name='手机号')
+    username = models.CharField(null=False, max_length=20, verbose_name='用户名')
+    userpwd = models.CharField(null=False, max_length=100, verbose_name='登陆密码')
+
+# class UserPersonInfo(models.Model):
+#     id = models.AutoField(primary_key=True, verbose_name='序号')
+#     username = models.CharField(null=False,max_length=20, verbose_name='用户名')
+#     realname = models.CharField(null=False,max_length=20, verbose_name='真实姓名')
+#     idcard = models.CharField(null=False,max_length=20, verbose_name='身份证')
+#     sex = models.BooleanField(null=False,verbose_name='性别')
+
+
 class FilmInfo(models.Model):
-    id = models.AutoField(primary_key=True)
-    title = models.CharField(null=False, max_length=40)
-    type = models.CharField(null=False, max_length=40)
-    origin = models.CharField(null=False, max_length=20)
-    duration = models.IntegerField(null=False)
-    releasetime = models.CharField(null=False, max_length=20)
-    release = models.CharField(null=False, max_length=20)
-    syncpsis = models.CharField(null=False, max_length=400)
-    pic = models.ImageField(upload_to='img',null=True)
+    id = models.AutoField(primary_key=True, verbose_name='序号')
+    title = models.CharField(null=False, max_length=40, verbose_name='电影名')
+    type = models.CharField(null=False, max_length=40, verbose_name='类型')
+    origin = models.CharField(null=False, max_length=20, verbose_name='发行国家')
+    duration = models.IntegerField(null=False, verbose_name='时长')
+    releasetime = models.CharField(null=False, max_length=20, verbose_name='上映日期')
+    release = models.CharField(null=False, max_length=20, verbose_name='上映具体时间和地点')
+    syncpsis = models.CharField(null=False, max_length=400, verbose_name='剧情介绍')
+    pic = models.CharField(null=False, max_length=100, verbose_name='电影图片',default='null')
 
 
+class CeleList(models.Model):
+    title = models.CharField(null=False, max_length=20, verbose_name='电影名')
+    type = models.CharField(null=False, max_length=20, verbose_name='职位')
+    name = models.CharField(null=False, max_length=20, verbose_name='名字')
+    pic = models.CharField(null=False, max_length=100, verbose_name='照片')
+    # pic = models.ImageField()
 
 
+class ImgList(models.Model):
+    title = models.CharField(null=False, max_length=20, verbose_name='电影名')
+    pic = models.CharField(null=False, max_length=100, verbose_name='照片')
 
 
 
